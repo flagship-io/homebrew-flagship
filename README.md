@@ -38,3 +38,7 @@ You can confirm that the install worked using:
 $ flagship version
 Flagship CLI version: v0.3.7
 ```
+
+## Licence
+
+[Apache License.](https://github.com/flagship-io/homebrew-flagship/blob/main/LICENSE)
