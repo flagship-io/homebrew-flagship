@@ -5,11 +5,11 @@
 class Flagship < Formula
   desc ""
   homepage "https://github.com/flagship-io/flagship"
-  version "1.0"
+  version "1.0.1"
 
   on_macos do
-    url "https://github.com/flagship-io/flagship/releases/download/v1.0/flagship_1.0_darwin_all.tar.gz"
-    sha256 "41a25993b5efda9c5b16d32e8a8da15e1cc10ebe0cfd28fd0b298f6d8cbd9ead"
+    url "https://github.com/flagship-io/flagship/releases/download/v1.0.1/flagship_1.0.1_darwin_all.tar.gz"
+    sha256 "7e10abe7ca4655bffb5ee2013b548a2c403879becd928d95bb11a70132b200d0"
 
     def install
       bin.install "flagship"
@@ -17,17 +17,17 @@ class Flagship < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/flagship-io/flagship/releases/download/v1.0/flagship_1.0_linux_amd64.tar.gz"
-      sha256 "1aa3cece015dbe73cf1bc1e18c8e6bac7c12486a33c04d1f71236422a63f6d21"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/flagship-io/flagship/releases/download/v1.0.1/flagship_1.0.1_linux_arm64.tar.gz"
+      sha256 "a5a7018a2edc6f48008d682e3c015954882d09e79b0276a6ff74e8c83bd90452"
 
       def install
         bin.install "flagship"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flagship-io/flagship/releases/download/v1.0/flagship_1.0_linux_arm64.tar.gz"
-      sha256 "3377bb56ac5a76bedc0e54e39f29d63e04bd3b02541af9f6208ac64bb0665fca"
+    if Hardware::CPU.intel?
+      url "https://github.com/flagship-io/flagship/releases/download/v1.0.1/flagship_1.0.1_linux_amd64.tar.gz"
+      sha256 "9a3fbf125dcdc10cb63e501b44abd2451d33750d1df1aea1a29a94847de6c986"
 
       def install
         bin.install "flagship"
