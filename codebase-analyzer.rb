@@ -5,11 +5,11 @@
 class CodebaseAnalyzer < Formula
   desc ""
   homepage "https://github.com/flagship-io/codebase-analyzer"
-  version "0.8.0"
+  version "0.9.2"
 
   on_macos do
-    url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.8.0/codebase-analyzer_0.8.0_darwin_all.tar.gz"
-    sha256 "9fd22e3915f8d372b69d8fcdd5be226f3abcb2583c586c840f03ef9411606402"
+    url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.2/codebase-analyzer_0.9.2_darwin_all.tar.gz"
+    sha256 "146da0a502f7f7b4b213864d37cc43b1c4287f3c08e887d0f420b79abe427706"
 
     def install
       bin.install "codebase-analyzer"
@@ -17,20 +17,24 @@ class CodebaseAnalyzer < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.8.0/codebase-analyzer_0.8.0_linux_arm64.tar.gz"
-      sha256 "a88707b7cfdaaf10c07b98f4915c50f736740b756f801fc5f48db3a050373522"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.2/codebase-analyzer_0.9.2_linux_amd64.tar.gz"
+        sha256 "493b7947ae05f85128a27d10f98e3ee17847df6c6f809c9d8acd3d74724a7f86"
 
-      def install
-        bin.install "codebase-analyzer"
+        def install
+          bin.install "codebase-analyzer"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.8.0/codebase-analyzer_0.8.0_linux_amd64.tar.gz"
-      sha256 "238edfd51e590fae2881aa94258608f6ba01fe35bdbd88af8ea76d18ec677710"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.2/codebase-analyzer_0.9.2_linux_arm64.tar.gz"
+        sha256 "2973b9d32d1b35ef3e4327bcee5d84d3ee8e7090134a5869f2c19308188ccaeb"
 
-      def install
-        bin.install "codebase-analyzer"
+        def install
+          bin.install "codebase-analyzer"
+        end
       end
     end
   end
