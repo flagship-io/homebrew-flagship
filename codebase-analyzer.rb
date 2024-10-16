@@ -5,11 +5,11 @@
 class CodebaseAnalyzer < Formula
   desc ""
   homepage "https://github.com/flagship-io/codebase-analyzer"
-  version "0.9.2"
+  version "0.9.3"
 
   on_macos do
-    url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.2/codebase-analyzer_0.9.2_darwin_all.tar.gz"
-    sha256 "146da0a502f7f7b4b213864d37cc43b1c4287f3c08e887d0f420b79abe427706"
+    url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.3/codebase-analyzer_0.9.3_darwin_all.tar.gz"
+    sha256 "e97adccf612b3c17ad0c8d2a0dff618207acf517e8464ca8ca18f94f025ea582"
 
     def install
       bin.install "codebase-analyzer"
@@ -19,8 +19,8 @@ class CodebaseAnalyzer < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.2/codebase-analyzer_0.9.2_linux_amd64.tar.gz"
-        sha256 "493b7947ae05f85128a27d10f98e3ee17847df6c6f809c9d8acd3d74724a7f86"
+        url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.3/codebase-analyzer_0.9.3_linux_amd64.tar.gz"
+        sha256 "3feacada8b284c695726a7030efd2f354848abb628ad354c08a8517268fbcabb"
 
         def install
           bin.install "codebase-analyzer"
@@ -29,8 +29,8 @@ class CodebaseAnalyzer < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.2/codebase-analyzer_0.9.2_linux_arm64.tar.gz"
-        sha256 "2973b9d32d1b35ef3e4327bcee5d84d3ee8e7090134a5869f2c19308188ccaeb"
+        url "https://github.com/flagship-io/codebase-analyzer/releases/download/v0.9.3/codebase-analyzer_0.9.3_linux_arm64.tar.gz"
+        sha256 "3db46efe8f573093e817c1bf76f887185bf7143080536a41785f1d06b7999cee"
 
         def install
           bin.install "codebase-analyzer"
